@@ -1501,51 +1501,55 @@
     <script>
 
         $(document).ready(function () {
-            var alertTimeout;
-            var timerPaused = false;
+            $(window).on('load resize', function () {
+                if ($(window).width() > 1366) {
+                    var alertTimeout;
+                    var timerPaused = false;
 
-            // Add class to body when alert timer starts
-            function addBodyClass() {
-                $('.info-sec').addClass('alert-box-bg');
-                $('body').addClass('overflow-hidden');
-            }
+                    // Add class to body when alert timer starts
+                    function addBodyClass() {
+                        $('.info-sec').addClass('alert-box-bg');
+                        $('body').addClass('overflow-hidden');
+                    }
 
-            // Remove class from body when alert timer ends
-            function removeBodyClass() {
-                $('.info-sec').removeClass('alert-box-bg');
-                $('body').removeClass('overflow-hidden');
-            }
+                    // Remove class from body when alert timer ends
+                    function removeBodyClass() {
+                        $('.info-sec').removeClass('alert-box-bg');
+                        $('body').removeClass('overflow-hidden');
+                    }
 
-            // Start the timer
-            function startTimer() {
-                alertTimeout = setTimeout(function () {
-                    $('#welcomeAlert').alert('close');
-                    removeBodyClass();
-                }, 6000); // 1 minute (60,000 milliseconds)
+                    // Start the timer
+                    function startTimer() {
+                        alertTimeout = setTimeout(function () {
+                            $('#welcomeAlert').alert('close');
+                            removeBodyClass();
+                        }, 6000); // 1 minute (60,000 milliseconds)
 
-                addBodyClass();
-            }
+                        addBodyClass();
+                    }
 
-            // Pause or resume the timer on mouse hover
-            $('#welcomeAlert').hover(function () {
-                if (alertTimeout) {
-                    clearTimeout(alertTimeout);
-                    timerPaused = true;
-                }
-            }, function () {
-                if (timerPaused) {
-                    timerPaused = false;
+                    // Pause or resume the timer on mouse hover
+                    $('#welcomeAlert').hover(function () {
+                        if (alertTimeout) {
+                            clearTimeout(alertTimeout);
+                            timerPaused = true;
+                        }
+                    }, function () {
+                        if (timerPaused) {
+                            timerPaused = false;
+                            startTimer();
+                        }
+                    });
+
+                    // Show the welcome alert and start the timer
+                    $('#welcomeAlert').alert();
                     startTimer();
+
+                    // Remove body class when alert is closed
+                    $('#welcomeAlert').on('closed.bs.alert', function () {
+                        removeBodyClass();
+                    });
                 }
-            });
-
-            // Show the welcome alert and start the timer
-            $('#welcomeAlert').alert();
-            startTimer();
-
-            // Remove body class when alert is closed
-            $('#welcomeAlert').on('closed.bs.alert', function () {
-                removeBodyClass();
             });
         });
 
