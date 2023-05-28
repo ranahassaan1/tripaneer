@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tripaneer</title>
+    <link rel="shortcut icon" href="assets/media/icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="assets/slick/slick.css">
+    <link rel="stylesheet" href="assets/slick/slick-theme.css">
+    <link rel="stylesheet" href="assets/datepicker/dcalendar.css">
+    <link rel="stylesheet" href="assets/custom-styles/variables.css">
+    <link rel="stylesheet" href="assets/custom-styles/buttons.css">
+    <link rel="stylesheet" href="assets/custom-styles/header.css">
+    <link rel="stylesheet" href="assets/custom-styles/footer.css">
+    <link rel="stylesheet" href="assets/custom-styles/rating.css">
+    <link rel="stylesheet" href="assets/custom-styles/main.css">
+    <link rel="stylesheet" href="assets/custom-styles/media.css">
+
+</head>
+
+<body>
+
+    <section class="info-sec">
+        <div id="welcomeAlert" class="welcome-alert alert alert-info alert-dismissible fade show" role="alert">
+            <button type="button"
+                class="btn_close border-0 position-static mx-auto d-flex align-items-center justify-content-center fw-bold bg-danger text-white p-3 py-2 mb-3"
+                data-bs-dismiss="alert" aria-label="Close">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <p class="des text-black text-center">
+                <span class="bg-danger text-white rounded-2 shadow-sm py-2 px-2 mb-2 lh-lg">HERE:</span>
+
+                Due to short time and my busy schedule, I have made important parts of this project. Hope this
+                assignment will show you my work ability and i have made some changes in UI.
+
+            </p>
+            <div class="container my-3">
+                <div class="row">
+                    <div class="col-12 mt-2">
+                        You can check the given funcatonalities in these components ....
+                    </div>
+                    <div class="col-lg-4">
+                        <p>Currency Modal:</p>
+                        <img src="assets/media/imgs/currency-fn.png" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-lg-4">
+                        <p>Add to favourite:</p>
+                        <img src="assets/media/imgs/fvrt-1-fn.png" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-lg-4">
+                        <p>Rating Review:</p>
+                        <img src="assets/media/imgs/rating-fn.png" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+            <p class="des text-black text-center">
+                <strong class="d-block text-center mt-3">THANK YOU ....</strong>
+            </p>
+        </div>
+    </section>
+
+    <header class="site-header sticky-top top-0 w-100">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand d-flex justify-content-center m-0 p-0" href="#">
+                    <img src="assets/media/svgs/logo.svg" alt="" class="img-fluid">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto px-0 px-lg-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Destinations</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Health & Wellness</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Online Experiences</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav-item-right d-flex align-items-center">
+                    <button type="button" class="btn_simple btn_currency" data-bs-toggle="modal"
+                        data-bs-target="#currencyModal">
+                        <i class="fa-solid fa-globe"></i>
+                        <span class="ms-2 fw-bold">
+                            usd
+                        </span>
+                    </button>
+                    <a href="" class="btn_simple btn_fvrt">
+                        <i class="fa-regular fa-heart"></i>
+                    </a>
+                    <button type="button" class="btn_simple btn_logIn">
+                        <i class="fa-regular fa-user"></i>
+                    </button>
+                    <a href="" class="btn_primary btn_signUp">sign up</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="breadcrumb-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="py-3">
+                        <ol class="breadcrumb m-0">
+                            <li class="breadcrumb-item">
+                                <a href="#">
+                                    home
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                Italy <span class="">(275)</span>
+                            </li>
+                        </ol>
+                    </nav>
+                    <main>
+                </div>
+            </div>
+        </div>
+    </section>
+    <main>
+        <section class="gallery-section">
+            <div class="container">
+                <div class="row gx-2">
+                    <div class="col-lg-8 hide_this">
+                        <div class="img-xl position-relative">
+                            <button type="button" class="add-fvrt position-absolute">
+                                <span class="fvrt-icon" data-target="unlike">
+                                    <i class="fa-regular fa-heart unlike-heart"></i>
+                                    <i class="fa-solid fa-heart liked-heart"></i>
+                                </span>
+                            </button>
+                            <img src="https://images.pexels.com/photos/33045/lion-wild-africa-african.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                alt="img" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="position-relative">
+                            <div class="place-btn position-absolute">
+                                <a href="http://" class="btn_primary rounded-2 py-2 px-3 shadow-sm" target="_blank">
+                                    Go to gallery
+                                </a>
+                            </div>
+                            <div class="slider-for">
+                                <div>
+                                    <a href="https://images.pexels.com/photos/33045/lion-wild-africa-african.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                        class="img-lg">
+                                        <img src="https://images.pexels.com/photos/33045/lion-wild-africa-african.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                            alt="img" class="img-fluid">
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="" class="img-lg">
+                                        <img src="https://images.pexels.com/photos/1402787/pexels-photo-1402787.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                            alt="img">
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="" class="img-lg">
+                                        <img src="https://images.pexels.com/photos/1402787/pexels-photo-1402787.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                            alt="img">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="slider-nav">
+                                <div>
+                                    <div class="img-md">
+                                        <img src="https://images.pexels.com/photos/1402787/pexels-photo-1402787.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                            alt="img">
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="img-md">
+                                        <img src="https://images.pexels.com/photos/1402787/pexels-photo-1402787.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                            alt="img">
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="img-md">
+                                        <img src="https://images.pexels.com/photos/1402787/pexels-photo-1402787.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                            alt="img">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="main-content">
+            <div class="container">
+                <div class="row gy-2">
+                    <div class="col-12">
+                        <div class="main-title my-4">
+                            <h1 class="heading-lg">
+                                7 Day All-inclusive Italy Luxury Culinary Vacation in Beautiful Roman Countryside
+                            </h1>
+                            <p class="m-0 text-black-50">
+                                La Cucina Sabina, Strada Provinciale Pascolare 164, Palombara Sabina, Rome, Lazio, Italy
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card card_box border-0 px-2 px-md-4 py-4 mb-3">
+                            <div class="each-div-gap d-flex flex-column w-100">
+                                <div class="overview">
+                                    <small class="title-light text-black-50 text-capitalize fw-normal">Overview</small>
+                                    <h2 class="title m-0 fw-medium">Luxury Cooking Holiday on Mountains near Rome, Italy
+                                    </h2>
+
+
+                                    <div class="alert alert-success border-0 rounded-2 p-3 my-4">
+                                        This listing has one of the 10 most popular offers available in the website
+                                    </div>
+
+                                    <div class="des">
+                                        <p>
+                                            La Cucina Sabina hosts a luxury culinary and cultural vacation program at a
+                                            private,
+                                            modern villa. La Cucina Sabina combines food, culture, exclusive excursions,
+                                            and
+                                            fun
+                                            into an experience of a lifetime! You will enjoy access to places and people
+                                            you
+                                            would
+                                            never find on your own. This creates a unique experience that is
+                                            unforgettable.
+                                            When
+                                            you
+                                            depart after a week of the hospitality, you all feel like you got to know
+                                            the
+                                            “real
+                                            Italy” and their people and culture.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="instructor-detail-box">
+                                    <h2 class="title m-0 fw-medium">
+                                        Meet the instructors
+                                    </h2>
+                                    <div class="instructor-detail d-flex gap-4 mt-3">
+                                        <div
+                                            class="instructor-img d-flex justify-content-center overflow-hidden rounded-circle bg-success bg-opacity-25">
+                                            <img src="assets/media/imgs/120x120.jpg" alt="img" class="">
+                                        </div>
+                                        <div class="w-100">
+                                            <div class="instructo-rname">
+                                                Barbara
+                                            </div>
+                                            <p class="instructor-des des d-full-text">
+                                                Barbara is young and dynamic, a true volcano of ideas. She is already an
+                                                accomplished creative culinary talent. After a long period of practice,
+                                                she
+                                                has
+                                                become a teacher in the most famous Italian cooking school, Il Gambero
+                                                Rosso,
+                                                and now collaborates with La Cucina Sabina offering the guests cooking
+                                                lessons
+                                                that are always creative original and fun.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-description">
+                                    <h2 class="title m-0 fw-medium">Highlights</h2>
+                                    <ul>
+                                        <li>Authentic Italian cooking lessons</li>
+                                        <li>Winery visit and a tasting overlooking beautiful Lake Bolsena</li>
+                                        <li>Olive oils tasting and lesson on understanding what makes an olive oil great
+                                        </li>
+                                        <li>A guided tour of the beautiful gardens of Villa d'Este</li>
+                                        <li>Visit to places not normally seen by tourists</li>
+                                        <li>Airport, hotel, or train station transfers</li>
+                                        <li>6 nights accommodation</li>
+                                        <li>3 daily tasty meals</li>
+                                    </ul>
+                                </div>
+                                <div class="list-description">
+                                    <h2 class="title m-0 fw-medium">Skill level</h2>
+                                    <ul>
+                                        <li>Beginner</li>
+                                        <li>Intermediate</li>
+                                    </ul>
+                                </div>
+                                <div class="divider w-100 d-flex align-items-center justify-content-center border-top">
+                                </div>
+                                <div class="list-description icon-list">
+                                    <h2 class="title m-0 fw-medium">Highlights</h2>
+                                    <ul class="p-0 list-unstyled">
+                                        <li>
+                                            <span class="list-icon me-2">
+                                                <i class="fa-solid fa-calendar"></i>
+                                            </span>
+                                            6 days with instruction in <span class="fw-bold">English</span>
+                                        </li>
+                                        <li>
+                                            <span class="list-icon me-2">
+                                                <i class="fa-solid fa-comment-dots"></i>
+                                            </span>
+                                            The organizer also speaks:&nbsp;French, Italian
+                                        </li>
+                                        <li>
+                                            <span class="list-icon me-2">
+                                                <i class="fa-solid fa-users"></i>
+                                            </span>
+                                            Group size: Maximum of 20 participants
+                                        </li>
+                                        <li>
+                                            <span class="list-icon me-2">
+                                                <i class="fa-solid fa-truck-field"></i>
+                                            </span>
+                                            Airport transfer included:
+                                            Ciampino–G. B. Pastine International Airport
+                                        </li>
+                                        <li>
+                                            <span class="list-icon me-2">
+                                                <i class="fa-solid fa-truck-field"></i>
+                                            </span>
+                                            Airport transfer included:
+                                            Leonardo da Vinci–Fiumicino Airport
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" id="closeAllButton"
+                            class="btn btn-outline-dark btn-sm d-flex px-3 mb-3 ms-auto">-- Hide all</button>
+                        <div class="accordion custom-accordion p-0 m-0 bg-transparent mb-3" id="accordionDetail">
+                            <div class="accordion-item bg-white border-0 mb-3">
+                                <button class="accordion-button accordion-header" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#panel-collapseOne" aria-expanded="true"
+                                    aria-controls="panel-collapseOne">
+                                    <span class="accordion-icon clr-primary">
+                                        <i class="fa-solid fa-bus"></i>
+                                    </span>
+                                    <h2 class="title m-0 fw-medium">Accommodation</h2>
+                                </button>
+                                <div id="panel-collapseOne" class="accordion-collapse collapse show">
+                                    <div class="accordion-body">
+                                        <div class="lists-box border-0 p-0 bg-transparent mb-3">
+                                            <p class="text-black fw-medium">
+                                                Facilities
+                                            </p>
+                                            <div class="d-flex flex-md-row flex-column gap-3 gap-md-5 w-100">
+                                                <ul class="card-list p-0 border-0 list-unstyled mt-3 w-100">
+                                                    <li class="text-black-50 border-0 px-0">
+                                                        <span class="icon">
+                                                            <i class="fa-solid fa-sleigh"></i>
+                                                        </span>
+                                                        <small class="d-block w-100">
+                                                            Sauna
+                                                        </small>
+                                                    </li>
+                                                    <li class="text-black-50 border-0 px-0">
+                                                        <span class="icon">
+                                                            <i class="fa-solid fa-sun-plant-wilt"></i>
+                                                        </span>
+                                                        <small class="d-block w-100">
+                                                            Garden
+                                                        </small>
+                                                    </li>
+                                                    <li class="text-black-50 border-0 px-0">
+                                                        <span class="icon">
+                                                            <i class="fa-solid fa-wifi"></i>
+                                                        </span>
+                                                        <small class="d-block w-100">
+                                                            Free Wi-Fi
+                                                        </small>
+                                                    </li>
+
+                                                </ul>
+                                                <ul class="card-list p-0 border-0 list-unstyled mt-3 w-100">
+                                                    <li class="text-black-50 border-0 px-0">
+                                                        <span class="icon">
+                                                            <i class="fa-solid fa-person-swimming"></i>
+                                                        </span>
+                                                        <small class="d-block w-100">
+                                                            Swimming pool (outdoor)
+                                                        </small>
+                                                    </li>
+                                                    <li class="text-black-50 border-0 px-0">
+                                                        <span class="icon">
+                                                            <i class="fa-solid fa-kitchen-set"></i>
+                                                        </span>
+                                                        <small class="d-block w-100">
+                                                            Kitchen
+                                                        </small>
+                                                    </li>
+                                                    <li class="text-black-50 border-0 px-0">
+                                                        <span class="icon">
+                                                            <i class="fa-solid fa-check"></i>
+                                                        </span>
+                                                        <small class="d-block w-100">
+                                                            Patio
+                                                        </small>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="des">
+                                            <p>
+                                                The villa is a part of La Cucina Sabina. It is best described as a
+                                                luxurious
+                                                country home which sits on a 150-acre estate surrounded by olive and
+                                                cherry
+                                                orchards. Located in the tranquil Sabine hills, at the foothills of the
+                                                Lucretelli Mountain range, La Cucina Sabina is near enough to Rome to
+                                                enjoy
+                                                rich culture, yet far enough to be an oasis of peacefulness and beauty.
+                                                An
+                                                inspiring work of architecture, the three-story villa combines the clean
+                                                lines of Frank Lloyd Wright with classic Italian architecture, bringing
+                                                in
+                                                amazing vistas through the floor to ceiling glass, of the beautiful
+                                                surrounding mountains, gardens, and pool.
+                                                <br /><br />
+                                                The villa underwent a major renovation and refurbishment in 2015. It
+                                                boasts
+                                                a state of the art demonstration kitchen, impressive art collection,
+                                                baby
+                                                grand piano, salt water pool, sauna, rose garden, outdoor pizza oven,
+                                                eight
+                                                bedrooms (all with en-suite bathrooms), nine bathrooms, tennis court,
+                                                and
+                                                nighttime vistas of lighted hilltop castles. This resort provides a
+                                                guest
+                                                washer/dryer, free high speed WiFi and hairdryers in each room.
+                                                <br /><br />
+                                                Each bedroom has custom made American king-sized beds that also can
+                                                divide
+                                                into twins, large closets, TVs, free Wi-Fi, and premium olive oil based
+                                                toiletries. Two upstairs suites include balconies with sweeping vistas,
+                                                large soaking tubs, and separate showers. All upstairs rooms provide
+                                                views
+                                                of mountains, hills, and countryside. Ground floor rooms have direct
+                                                garden
+                                                access and a shared patio. The villa is near a local train that runs
+                                                directly into Rome throughout the day.
+                                            </p>
+                                        </div>
+                                        <div class="text-block mt-3">
+                                            <h2 class="title h4 m-0 fw-medium fs-5 mb-2">
+                                                Garden view room
+                                            </h2>
+                                            <div class="des">
+                                                <p>
+                                                    Garden view room is a ground floor bedroom with a private bathroom
+                                                    and
+                                                    shared external patio.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="text-block mt-3">
+                                            <h2 class="title h4 m-0 fw-medium fs-5 mb-2">
+                                                Mountain view room
+                                            </h2>
+                                            <div class="des">
+                                                <p>
+                                                    Mountain view room is an upstairs bedroom with private bath. It has
+                                                    views of hills, mountains, olive groves, and lighted hilltop castles
+                                                    at
+                                                    night.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="text-block mt-3">
+                                            <h2 class="title h4 m-0 fw-medium fs-5 mb-2">
+                                                Mountain view suite
+                                            </h2>
+                                            <div class="des">
+                                                <p>
+                                                    Mountain view suite is an upstairs suite with balcony and extra
+                                                    large
+                                                    private bath with separate shower and soaking tub. It has panoramic
+                                                    views of hills, mountains, countryside, and sunrise / sunset.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item bg-white border-0 mb-3">
+                                <button class="accordion-button accordion-header" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#panel-collapseTwo" aria-expanded="true"
+                                    aria-controls="panel-collapseTwo">
+                                    <span class="accordion-icon clr-primary">
+                                        <i class="fa-regular fa-calendar-days"></i>
+                                    </span>
+                                    <h2 class="title m-0 fw-medium">Program</h2>
+                                </button>
+                                <div id="panel-collapseTwo" class="accordion-collapse collapse show">
+                                    <div class="accordion-body">
+                                        <div class="text-block">
+                                            <h2 class="title h4 m-0 fw-medium fs-5 mb-2">
+                                                Overview
+                                            </h2>
+                                            <div class="des">
+                                                <p>
+                                                    Cooking focuses on authentic plus contemporary Italian cuisine,
+                                                    taught
+                                                    by the professional chef who trained in a Michelin three-star
+                                                    restaurant, as well as a local Nonna for pizza. La Cucina Sabina
+                                                    teaches
+                                                    regional recipes using only the freshest, seasonal and authentic
+                                                    farm-to-table ingredients including antipasti (appetizers), fresh
+                                                    pasta,
+                                                    sauces, risotto, vegetarian dishes, meats and seafood dishes,
+                                                    cooking
+                                                    pizza on our outdoor oven, dolci (desserts), and gelato, etc. Not
+                                                    keen
+                                                    on too much cooking? Don’t worry, the lessons are only part of what
+                                                    La
+                                                    Cucina Sabina offers and are completely optional with plenty of ways
+                                                    to
+                                                    relax and enjoy your time. Transfers are provided to and from Rome’s
+                                                    airport and the main train stations to the villa in Sabina, minutes
+                                                    from
+                                                    Rome. Check-in is on Sunday afternoon with check-out on the
+                                                    following
+                                                    Saturday morning.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="text-block mt-3">
+                                            <h2 class="title h4 m-0 fw-medium fs-5 mb-2">
+                                                Sunday, day 1
+                                            </h2>
+                                            <div class="des">
+                                                <p>
+                                                    On your arrival, La Cucina Sabina provides transfers and pick you up
+                                                    at
+                                                    Rome’s main airport, train station, or city hotel. Once you arrive
+                                                    at
+                                                    the villa, you check in, get comfortable and relax in the spacious
+                                                    villa
+                                                    or well-maintained gardens and grounds. A light buffet lunch and
+                                                    Prosecco are served with the afternoon left open to relax and enjoy
+                                                    your
+                                                    fellow guests or enjoy a refreshing swim or sauna. In the evening,
+                                                    the
+                                                    delicious four-course welcome dinner with professional waiter
+                                                    service is
+                                                    served on the sunset terrace (weather permitting) overlooking the
+                                                    olive
+                                                    groves and beautiful hills and mountains. You will discuss the
+                                                    exciting
+                                                    week ahead.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="text-block mt-3">
+                                            <h2 class="title h4 m-0 fw-medium fs-5 mb-2">
+                                                Monday, day 2
+                                            </h2>
+                                            <div class="des">
+                                                <p>
+                                                    You begin each morning with a full buffet breakfast in the formal
+                                                    dining
+                                                    room or under one of the covered outdoor terraces overlooking the
+                                                    pool,
+                                                    olive trees hillsides, and mountains. The first cooking lesson
+                                                    begins in
+                                                    the mid-morning with the professional chef. Because La Cucina Sabina
+                                                    is
+                                                    hands-on, you will be preparing your lunch that you will enjoy. In
+                                                    the
+                                                    late afternoon, you head to Castello Savelli, a medieval castle in
+                                                    the
+                                                    hilltop town of Palombara Sabina, a short drive from the villa.
+                                                    <br /><br />
+                                                    You will enjoy a private tour of the castle and museum with ancient
+                                                    statues and then a sunset prosecco reception overlooking the Sabine
+                                                    Hills and valley. This is a rare opportunity to visit the castle and
+                                                    museum which is not normally open to the public and experience the
+                                                    same
+                                                    stunning views of Sabina that Margaret Thatcher and her husband saw
+                                                    on
+                                                    their many visits to their "secret getaway". A four-course private
+                                                    dinner is a few steps down the cobblestone path to the old Tavern
+                                                    Ristorante.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="text-block mt-3">
+                                            <h2 class="title h4 m-0 fw-medium fs-5 mb-2">
+                                                Tuesday, day 3
+                                            </h2>
+                                            <div class="des">
+                                                <p>
+                                                    After a buffet breakfast, you visit the ancient hilltop town of
+                                                    Tivoli
+                                                    for a guided tour of the beautiful gardens of Villa d'Este, a UNESCO
+                                                    World Heritage Site, where you will be amazed at the Renaissance
+                                                    villa,
+                                                    gardens, and fountains. The Renaissance gardens stood as a model for
+                                                    others throughout Europe to follow. Along the way, you will visit
+                                                    the
+                                                    morning farmers market as the locals do. After lunch at a historic
+                                                    restaurant in Tivoli, overlooking an ancient Roman temple, you
+                                                    return to
+                                                    La Cucina Sabina for your afternoon lesson with the professional
+                                                    chef,
+                                                    followed by dinner on the sunset terrace overlooking the olive
+                                                    groves
+                                                    and Monte Serrate. (weather permitting)
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="text-block mt-3">
+                                            <h2 class="title h4 m-0 fw-medium fs-5 mb-2">
+                                                Wednesday, day 4
+                                            </h2>
+                                            <div class="des">
+                                                <p>
+                                                    Following your buffet breakfast, you depart for “Discover the
+                                                    Secrets of
+                                                    Ancient Rome” tour. In a special, guided tour of the city, you visit
+                                                    places not normally seen by tourists, making your visit very special
+                                                    and
+                                                    unique. Experience the Rome that the locals know, with a rare
+                                                    combination of art, food, culture, and history in a very full day
+                                                    experiencing "la dolce vita”. Both lunch and dinner will be enjoyed
+                                                    in
+                                                    Rome. During the afternoon, the tour continues or optional free time
+                                                    is
+                                                    available for shopping or independent touring. A four-course dinner
+                                                    is
+                                                    enjoyed on a private rooftop apartment hosted by local Italians and
+                                                    overlooking the beautiful skyline with its magical sunset.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="text-block mt-3">
+                                            <h2 class="title h4 m-0 fw-medium fs-5 mb-2">
+                                                Thursday, day 5
+                                            </h2>
+                                            <div class="des">
+                                                <p>
+                                                    After breakfast, you enjoy a scenic drive through the foothills of
+                                                    northern Lazio toward Umbria for a winery visit and a tasting at the
+                                                    family-owned Mazziotti winery overlooking beautiful Lake Bolsena,
+                                                    followed by lunch with the winery owners in their private tasting
+                                                    room.
+                                                    To complement the winery, you stroll through the wonderful hilltop
+                                                    Umbrian town of Orvieto, with its dramatic vistas, medieval walls,
+                                                    Etruscan ruins, shops and cathedral. This town dates back all the
+                                                    way
+                                                    back to ancient Etruscan times. In the evening, you have your pizza
+                                                    lesson and dinner at the villa where you will learn how to make
+                                                    pizza
+                                                    using the authentic outdoor wood burning oven.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="text-block mt-3">
+                                            <h2 class="title h4 m-0 fw-medium fs-5 mb-2">
+                                                Friday, day 6
+                                            </h2>
+                                            <div class="des">
+                                                <p>
+                                                    Begin the day by enjoying a delicious homemade breakfast. Since the
+                                                    estate produces its own DOP extra virgin olive oil, you will visit
+                                                    the
+                                                    olive grove and local mill. As part of the visit, you learn what the
+                                                    Romans knew about growing olives 2000 years ago as well as the
+                                                    modern
+                                                    Italian methods of producing some of the best olive oil in the
+                                                    world.
+                                                    You return to the villa and enjoy a tasting of olive oils and lesson
+                                                    on
+                                                    understanding what makes an olive oil great. After some R & R, you
+                                                    begin
+                                                    your fourth lesson with your chef. You use all your skills learned
+                                                    during the week for your big grand finale five-course dinner,
+                                                    cooking
+                                                    everything from antipasto to dolce!
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="text-block mt-3">
+                                            <h2 class="title h4 m-0 fw-medium fs-5 mb-2">
+                                                Saturday, day 7
+                                            </h2>
+                                            <div class="des">
+                                                <p>
+                                                    After a light breakfast and goodbyes, transfers are provided to
+                                                    Rome's
+                                                    airports, hotels, or train station for return trips or extended
+                                                    travel
+                                                    in Italy.
+                                                    <br /><br />
+                                                    Note: During your stay, La Cucina Sabina is happy to make available
+                                                    one
+                                                    of Rome’s fine tailors to make you custom clothing that’s both
+                                                    stylish
+                                                    and great fitting.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item bg-white border-0 mb-3">
+                                <button class="accordion-button accordion-header" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#panel-collapseThree" aria-expanded="true"
+                                    aria-controls="panel-collapseThree">
+                                    <span class="accordion-icon clr-primary">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </span>
+                                    <h2 class="title m-0 fw-medium">Location</h2>
+                                </button>
+                                <div id="panel-collapseThree" class="accordion-collapse collapse show">
+                                    <div class="accordion-body">
+                                        <div class="des">
+                                            <p>
+                                                This holiday will take place in Palombara Sabina, Italy. It's a quiet
+                                                rural
+                                                area, located just thirty minutes away from Rome.
+                                            </p>
+                                        </div>
+                                        <div class="list-description mt-3">
+                                            <h2 class="title m-0 fw-medium fs-6">Nearby places</h2>
+                                            <ul>
+                                                <li>Farfa Abbey - 30 minutes</li>
+                                                <li>Monterotondo - 10 minutes</li>
+                                                <li>Monti Lucretili Regional Natural Park - 30 minutes</li>
+                                                <li>Mount Terminillo - 1 hour 30 minutes</li>
+                                                <li>Nazzano Regional Natural Reserve - 40 minutes</li>
+                                                <li>Palombara Sabina - 10 minutes</li>
+                                                <li>Rome - 35 minutes</li>
+                                                <li>Sanctuary of Santa Maria in Vescovio - 40 minutes</li>
+                                                <li>Tivoli - 30 minutes</li>
+                                                <li>Train station of Pianabella di Montelibretti - 3 minutes</li>
+                                            </ul>
+                                        </div>
+                                        <div class="map-area rounded-2 shadow-sm mt-3">
+                                            <iframe
+                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3034762.971137558!2d11.250978359374994!3d42.02954661701407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12d4fe82448dd203%3A0xe22cf55c24635e6f!2sItaly!5e0!3m2!1sen!2s!4v1685270458391!5m2!1sen!2s"
+                                                allowfullscreen="" loading="lazy"
+                                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="social-box card card_box border-0 px-2 px-md-4 py-4 mb-3 d-none d-md-block">
+                            <h2 class="title">
+                                <span class="list-icon d-inline-block">
+                                    <i class="fa-solid fa-share"></i>
+                                </span>
+                                Share this listing
+                            </h2>
+                            <div class="social-media-btns d-flex flex-wrap align-items-center gap-2 mt-3">
+                                <button type="button" class="btn btn-outline-secondary fw-light p-1">
+                                    <span class="fb-icon">
+                                        <i class="fa-brands fa-facebook-f"></i>
+                                    </span>
+                                    facebook
+                                </button>
+                                <button type="button" class="btn btn-outline-secondary fw-light p-1 px-2">
+                                    <span class="twitter-icon">
+                                        <i class="fa-brands fa-twitter"></i>
+                                    </span>
+                                    twitter
+                                </button>
+                                <button type="button" class="btn btn-outline-secondary fw-light p-1 px-2">
+                                    <span class="mail-icon">
+                                        <i class="fa-regular fa-envelope"></i>
+                                    </span>
+                                    Email
+                                </button>
+                                <button type="button" class="btn btn-outline-secondary fw-light p-1 px-2">
+                                    <span class="whatsapp-icon">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                    </span>
+                                    Whatsapp
+                                </button>
+                                <button type="button" class="btn btn-outline-secondary fw-light p-1 px-2">
+                                    <span class="link-icon">
+                                        <i class="fa-solid fa-link"></i>
+                                    </span>
+                                    getlink
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <aside>
+                            <div class="social-box card card_box border-0 px-2 px-md-4 py-4 mb-3">
+                                <h2 class="title">
+                                    <span class="list-icon d-inline-block">
+                                        <i class="fa-solid fa-share"></i>
+                                    </span>
+                                    Share this listing
+                                </h2>
+                                <div class="social-media-btns d-flex flex-wrap align-items-center gap-2 mt-3">
+                                    <button type="button" class="btn btn-outline-secondary fw-light p-1">
+                                        <span class="fb-icon">
+                                            <i class="fa-brands fa-facebook-f"></i>
+                                        </span>
+                                        facebook
+                                    </button>
+                                    <button type="button" class="btn btn-outline-secondary fw-light p-1 px-2">
+                                        <span class="twitter-icon">
+                                            <i class="fa-brands fa-twitter"></i>
+                                        </span>
+                                        twitter
+                                    </button>
+                                    <button type="button" class="btn btn-outline-secondary fw-light p-1 px-2">
+                                        <span class="mail-icon">
+                                            <i class="fa-regular fa-envelope"></i>
+                                        </span>
+                                        Email
+                                    </button>
+                                    <button type="button" class="btn btn-outline-secondary fw-light p-1 px-2">
+                                        <span class="whatsapp-icon">
+                                            <i class="fa-brands fa-whatsapp"></i>
+                                        </span>
+                                        Whatsapp
+                                    </button>
+                                    <button type="button" class="btn btn-outline-secondary fw-light p-1 px-2">
+                                        <span class="link-icon">
+                                            <i class="fa-solid fa-link"></i>
+                                        </span>
+                                        getlink
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="review-box card card_box border-0 px-2 px-md-4 py-4 mb-3">
+                                <div class="d-flex align-items-center justify-content-between gap-2 flex-wrap">
+                                    <fieldset class="rating">
+                                        <label class="full rated">
+                                        </label>
+                                        <label class="full rated">
+                                        </label>
+                                        <label class="full rated">
+                                        </label>
+                                        <label class="full rated">
+                                        </label>
+                                        <label class="full rated">
+                                        </label>
+                                    </fieldset>
+                                    <small class="text-primary text-capitalize fw-semibold">1 review</small>
+                                </div>
+                                <div
+                                    class="divider w-100 d-flex align-items-center justify-content-center border-top mt-3 mb-1">
+                                </div>
+                                <div class="rating-fields w-100">
+                                    <div class="rating-flex d-flex align-items-center justify-content-between gap-2">
+                                        <small class="text-black-50">
+                                            Value for money
+                                        </small>
+                                        <fieldset class="rating">
+                                            <input type="radio" id="star5" name="rating" value="5" /><label class="full"
+                                                for="star5" title="Awesome - 5 stars"></label>
+                                            <input type="radio" id="star4half" name="rating"
+                                                value="4 and a half" /><label class="half" for="star4half"
+                                                title="Pretty good - 4.5 stars"></label>
+                                            <input type="radio" id="star4" name="rating" value="4" /><label class="full"
+                                                for="star4" title="Pretty good - 4 stars"></label>
+                                            <input type="radio" id="star3half" name="rating"
+                                                value="3 and a half" /><label class="half" for="star3half"
+                                                title="Meh - 3.5 stars"></label>
+                                            <input type="radio" id="star3" name="rating" value="3" /><label class="full"
+                                                for="star3" title="Meh - 3 stars"></label>
+                                            <input type="radio" id="star2half" name="rating"
+                                                value="2 and a half" /><label class="half" for="star2half"
+                                                title="Kinda bad - 2.5 stars"></label>
+                                            <input type="radio" id="star2" name="rating" value="2" /><label class="full"
+                                                for="star2" title="Kinda bad - 2 stars"></label>
+                                            <input type="radio" id="star1half" name="rating"
+                                                value="1 and a half" /><label class="half" for="star1half"
+                                                title="Meh - 1.5 stars"></label>
+                                            <input type="radio" id="star1" name="rating" value="1" /><label class="full"
+                                                for="star1" title="Sucks big time - 1 star"></label>
+                                            <input type="radio" id="starhalf" name="rating" value="half" /><label
+                                                class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                                        </fieldset>
+                                    </div>
+                                    <div class="rating-flex d-flex align-items-center justify-content-between gap-2">
+                                        <small class="text-black-50">
+                                            Accommodation & facilities
+                                        </small>
+                                        <fieldset class="rating">
+                                            <input type="radio" id="star5" name="rating" value="5" /><label class="full"
+                                                for="star5" title="Awesome - 5 stars"></label>
+                                            <input type="radio" id="star4half" name="rating"
+                                                value="4 and a half" /><label class="half" for="star4half"
+                                                title="Pretty good - 4.5 stars"></label>
+                                            <input type="radio" id="star4" name="rating" value="4" /><label class="full"
+                                                for="star4" title="Pretty good - 4 stars"></label>
+                                            <input type="radio" id="star3half" name="rating"
+                                                value="3 and a half" /><label class="half" for="star3half"
+                                                title="Meh - 3.5 stars"></label>
+                                            <input type="radio" id="star3" name="rating" value="3" /><label class="full"
+                                                for="star3" title="Meh - 3 stars"></label>
+                                            <input type="radio" id="star2half" name="rating"
+                                                value="2 and a half" /><label class="half" for="star2half"
+                                                title="Kinda bad - 2.5 stars"></label>
+                                            <input type="radio" id="star2" name="rating" value="2" /><label class="full"
+                                                for="star2" title="Kinda bad - 2 stars"></label>
+                                            <input type="radio" id="star1half" name="rating"
+                                                value="1 and a half" /><label class="half" for="star1half"
+                                                title="Meh - 1.5 stars"></label>
+                                            <input type="radio" id="star1" name="rating" value="1" /><label class="full"
+                                                for="star1" title="Sucks big time - 1 star"></label>
+                                            <input type="radio" id="starhalf" name="rating" value="half" /><label
+                                                class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                                        </fieldset>
+                                    </div>
+                                    <div class="rating-flex d-flex align-items-center justify-content-between gap-2">
+                                        <small class="text-black-50">
+                                            Food
+                                        </small>
+                                        <fieldset class="rating">
+                                            <input type="radio" id="star5" name="rating" value="5" /><label class="full"
+                                                for="star5" title="Awesome - 5 stars"></label>
+                                            <input type="radio" id="star4half" name="rating"
+                                                value="4 and a half" /><label class="half" for="star4half"
+                                                title="Pretty good - 4.5 stars"></label>
+                                            <input type="radio" id="star4" name="rating" value="4" /><label class="full"
+                                                for="star4" title="Pretty good - 4 stars"></label>
+                                            <input type="radio" id="star3half" name="rating"
+                                                value="3 and a half" /><label class="half" for="star3half"
+                                                title="Meh - 3.5 stars"></label>
+                                            <input type="radio" id="star3" name="rating" value="3" /><label class="full"
+                                                for="star3" title="Meh - 3 stars"></label>
+                                            <input type="radio" id="star2half" name="rating"
+                                                value="2 and a half" /><label class="half" for="star2half"
+                                                title="Kinda bad - 2.5 stars"></label>
+                                            <input type="radio" id="star2" name="rating" value="2" /><label class="full"
+                                                for="star2" title="Kinda bad - 2 stars"></label>
+                                            <input type="radio" id="star1half" name="rating"
+                                                value="1 and a half" /><label class="half" for="star1half"
+                                                title="Meh - 1.5 stars"></label>
+                                            <input type="radio" id="star1" name="rating" value="1" /><label class="full"
+                                                for="star1" title="Sucks big time - 1 star"></label>
+                                            <input type="radio" id="starhalf" name="rating" value="half" /><label
+                                                class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                                        </fieldset>
+                                    </div>
+                                    <div class="rating-flex d-flex align-items-center justify-content-between gap-2">
+                                        <small class="text-black-50">
+                                            Location
+                                        </small>
+                                        <fieldset class="rating">
+                                            <input type="radio" id="star5" name="rating" value="5" /><label class="full"
+                                                for="star5" title="Awesome - 5 stars"></label>
+                                            <input type="radio" id="star4half" name="rating"
+                                                value="4 and a half" /><label class="half" for="star4half"
+                                                title="Pretty good - 4.5 stars"></label>
+                                            <input type="radio" id="star4" name="rating" value="4" /><label class="full"
+                                                for="star4" title="Pretty good - 4 stars"></label>
+                                            <input type="radio" id="star3half" name="rating"
+                                                value="3 and a half" /><label class="half" for="star3half"
+                                                title="Meh - 3.5 stars"></label>
+                                            <input type="radio" id="star3" name="rating" value="3" /><label class="full"
+                                                for="star3" title="Meh - 3 stars"></label>
+                                            <input type="radio" id="star2half" name="rating"
+                                                value="2 and a half" /><label class="half" for="star2half"
+                                                title="Kinda bad - 2.5 stars"></label>
+                                            <input type="radio" id="star2" name="rating" value="2" /><label class="full"
+                                                for="star2" title="Kinda bad - 2 stars"></label>
+                                            <input type="radio" id="star1half" name="rating"
+                                                value="1 and a half" /><label class="half" for="star1half"
+                                                title="Meh - 1.5 stars"></label>
+                                            <input type="radio" id="star1" name="rating" value="1" /><label class="full"
+                                                for="star1" title="Sucks big time - 1 star"></label>
+                                            <input type="radio" id="starhalf" name="rating" value="half" /><label
+                                                class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                                        </fieldset>
+                                    </div>
+                                    <div class="rating-flex d-flex align-items-center justify-content-between gap-2">
+                                        <small class="text-black-50">
+                                            Quality of activity
+                                        </small>
+                                        <fieldset class="rating">
+                                            <input type="radio" id="star5" name="rating" value="5" /><label class="full"
+                                                for="star5" title="Awesome - 5 stars"></label>
+                                            <input type="radio" id="star4half" name="rating"
+                                                value="4 and a half" /><label class="half" for="star4half"
+                                                title="Pretty good - 4.5 stars"></label>
+                                            <input type="radio" id="star4" name="rating" value="4" /><label class="full"
+                                                for="star4" title="Pretty good - 4 stars"></label>
+                                            <input type="radio" id="star3half" name="rating"
+                                                value="3 and a half" /><label class="half" for="star3half"
+                                                title="Meh - 3.5 stars"></label>
+                                            <input type="radio" id="star3" name="rating" value="3" /><label class="full"
+                                                for="star3" title="Meh - 3 stars"></label>
+                                            <input type="radio" id="star2half" name="rating"
+                                                value="2 and a half" /><label class="half" for="star2half"
+                                                title="Kinda bad - 2.5 stars"></label>
+                                            <input type="radio" id="star2" name="rating" value="2" /><label class="full"
+                                                for="star2" title="Kinda bad - 2 stars"></label>
+                                            <input type="radio" id="star1half" name="rating"
+                                                value="1 and a half" /><label class="half" for="star1half"
+                                                title="Meh - 1.5 stars"></label>
+                                            <input type="radio" id="star1" name="rating" value="1" /><label class="full"
+                                                for="star1" title="Sucks big time - 1 star"></label>
+                                            <input type="radio" id="starhalf" name="rating" value="half" /><label
+                                                class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                                <div class="user-review">
+                                    <div class="d-flex align-items-center w-100 my-3">
+                                        <div
+                                            class="divider w-100 d-flex align-items-center justify-content-center border-top">
+                                        </div>
+                                        <i class="fa-solid fa-quote-right mx-3 text-black-50 fs-4"></i>
+                                        <div
+                                            class="divider w-100 d-flex align-items-center justify-content-center border-top">
+                                        </div>
+                                    </div>
+                                    <div class="comments-slider pb-2">
+                                        <div>
+                                            <a href="" class="user-comments d-block">
+                                                <p class="des fst-italic">
+                                                    I will love you forever! Truly luxurious accommodations, service,
+                                                    beauty,
+                                                    quality. A dream vacation of a lifetime. You will leave an expert
+                                                    and
+                                                    some extra text to increase width and check wrap for text the text
+                                                    should be in 4 lines
+                                                </p>
+                                                <div class="d-flex flex-column align-items-end mt-2">
+                                                    <p class="user-name des fw-bold fst-italic text-dark pe-2">
+                                                        Teresa Baron-atkinson
+                                                    </p>
+                                                    <p class="posted-date fw-light text-secondary pe-2">
+                                                        October 20, 2019, United States
+                                                    </p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a href="" class="user-comments d-block">
+                                                <p class="des fst-italic">
+                                                    I will love you forever! Truly luxurious accommodations, service,
+                                                    beauty,
+                                                    quality. A dream vacation of a lifetime. You will leave an expert
+                                                    and
+                                                    some extra text to increase width and check wrap for text the text
+                                                    should be in 4 lines
+                                                </p>
+                                                <div class="d-flex flex-column align-items-end mt-2">
+                                                    <p class="user-name des fw-bold fst-italic text-dark pe-2">
+                                                        Baron-atkinson
+                                                    </p>
+                                                    <p class="posted-date fw-light text-secondary pe-2">
+                                                        Dec 20, 2019, United States
+                                                    </p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="booking-box card card_box border-0 px-2 px-md-4 py-4 mb-3">
+                                <p class="fw-semibold"> 7 days / 6 nights</p>
+                                <h5 class="d-flex align-items-center gap-2 mt-2">
+                                    <span class="text-black-50 fs-6 m-0">From</span> <span
+                                        class="fw-bolder h5 m-0">US$4,500</span>
+                                </h5>
+                                <div class="content-md mt-3">
+                                    <h6 class="fs-6 fw-semibold mb-2">Pricing information</h6>
+                                    <p class="text-black-50 m-0">
+                                        There is a single supplement of 500 USD for solo travelers.
+                                    </p>
+                                </div>
+                                <div class="content-md mt-3">
+                                    <h6 class="fs-6 fw-semibold mb-2">Availability</h6>
+                                    <p class="text-black-50 m-0">
+                                        This vacation is available all year round with arrival on Sunday. Please select
+                                        an
+                                        arrival
+                                        date below.
+                                    </p>
+                                </div>
+                                <div class="date-picker mt-4">
+                                    <p class="text-black fw-medium">
+                                        Select arrival date:
+                                    </p>
+                                    <table id="calendar-demo" class="calendar w-100"></table>
+                                </div>
+                                <div class="packages">
+                                    <p class="text-black fw-medium">
+                                        Select your package:
+                                    </p>
+                                    <label class="select-package w-100">
+                                        <input name="package" data-card-id="" class="radio default_card selectedCard"
+                                            type="radio" value="" required="">
+                                        <div class="package-card h-auto w-100">
+                                            <div class="d-flex justify-content-between gap-2 w-100">
+                                                <div class="">
+                                                    <p class="fw-normal mb-2">1 person</p>
+                                                    <p class="fw-light">Private double room</p>
+                                                    <p class="fw-light text-black-50">Shared villa - Ground floor</p>
+                                                </div>
+                                                <div class="d-flex justify-content-end align-items-end pe-0">
+                                                    <h5 class="fw-bold h6 m-0">
+                                                        US$7,600
+                                                        <span class="d-block fw-normal text-black-50">
+                                                            Total price
+                                                        </span>
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-center gap-2 w-100">
+                                                <a href="" class="btn btn-outline-secondary btn-sm w-100">
+                                                    Show Photos
+                                                </a>
+                                                <button type="button" class="btn btn-outline-secondary btn-sm w-100">
+                                                    Request to book
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label class="select-package w-100">
+                                        <input name="package" data-card-id="" class="radio default_card selectedCard"
+                                            type="radio" value="" required="">
+                                        <div class="package-card h-auto w-100">
+                                            <div class="d-flex justify-content-between gap-2 w-100">
+                                                <div class="">
+                                                    <p class="fw-normal mb-2">1 person</p>
+                                                    <p class="fw-light">Private double room</p>
+                                                    <p class="fw-light text-black-50">Shared villa - Second floor</p>
+                                                </div>
+                                                <div class="d-flex justify-content-end align-items-end pe-0">
+                                                    <h5 class="fw-bold h6 m-0">
+                                                        US$6,600
+                                                        <span class="d-block fw-normal text-black-50">
+                                                            Total price
+                                                        </span>
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-center gap-2 w-100">
+                                                <a href="" class="btn btn-outline-secondary btn-sm w-100">
+                                                    Show Photos
+                                                </a>
+                                                <button type="button" class="btn btn-outline-secondary btn-sm w-100">
+                                                    Request to book
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <a href=""
+                                class="card card_box d-block border-0 mb-3 rounded-2 bg-transparent overflow-hidden">
+                                <img src="assets/media/imgs/card-img.jpg" class="card-img-top img-fluid" alt="img">
+                                <div class="card-body bg-white">
+                                    <h5 class="card-title fs-6 fw-normal text-black-50">
+                                        <small>
+                                            Organized by <span class="text-black fw-bold">La Cucina Sabina</span>
+                                        </small>
+                                    </h5>
+                                    <hr />
+                                    <p class="text-black-50">
+                                        <small>
+                                            Some quick example text to build on the card title and make up the
+                                            bulk of the card's content.
+                                        </small>
+                                    </p>
+                                    <ul class="card-list p-0 border-0 list-unstyled mt-3">
+                                        <li class="text-black-50 border-0 px-0">
+                                            <span class="icon"><i class="fa-solid fa-location-dot"></i></span>
+                                            <small class="d-block w-100">
+                                                Palombara Sabina (Rome), Italy
+                                            </small>
+                                        </li>
+                                        <li class="text-black-50 border-0 px-0">
+                                            <span class="icon"><i class="fa-solid fa-comment-dots"></i></span>
+                                            <small class="d-block w-100">
+                                                The organizer also speaks: French, Italian
+                                            </small>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </a>
+                            <div class="payment-box card card_box border-0 px-2 px-md-4 py-0 mb-3 bg-transparent">
+                                <img src="assets/media/imgs/payments.png" alt="" class="img-fluid mx-auto">
+                                <p class="m-0 text-center text-black-50">
+                                    <small>
+                                        For this organizer you can guarantee your booking through Tripaneer.com. All
+                                        major
+                                        credit cards supported.
+                                    </small>
+                                </p>
+                            </div>
+                            <div class="gift-box card card_box border-0 px-2 px-md-4 py-4 mb-3">
+                                <div class="d-flex gap-3 w-100">
+                                    <div class="image d-flex justify-content-center w-50 overflow-hidden">
+                                        <img src="assets/media/imgs/giftcard-stack-closed-small.png" class="img-fluid">
+                                    </div>
+                                    <div class="content">
+                                        <h2 class="h6 d-flex align-items-center gap-2">
+                                            <img src="assets/media/svgs/gift.svg" alt="">
+                                            Gift cards
+                                        </h2>
+                                        <p class="fw-light">
+                                            <small>
+                                                The gift of unforgettable experiences.
+                                            </small>
+                                        </p>
+
+                                        <a href="" class="d-flex align-items-center fw-bold clr-primary gap-2">
+                                            Buy a gift card
+                                            <span class="chevron mobile">
+                                                <i class="fa-solid fa-chevron-right"></i>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lists-box card card_box border-0 p-0 bg-transparent mb-3">
+                                <p class="text-black fw-medium">
+                                    Why choose Tripaneer.com
+                                </p>
+                                <ul class="card-list p-0 border-0 list-unstyled mt-3">
+                                    <li class="text-black-50 border-0 px-0">
+                                        <span class="icon">
+                                            <i class="fa-solid fa-circle-check"></i>
+                                        </span>
+                                        <small class="d-block w-100">
+                                            Largest Selection
+                                        </small>
+                                    </li>
+                                    <li class="text-black-50 border-0 px-0">
+                                        <span class="icon">
+                                            <i class="fa-solid fa-user-group"></i>
+                                        </span>
+                                        <small class="d-block w-100">
+                                            Friendly Customer Service
+                                        </small>
+                                    </li>
+                                    <li class="text-black-50 border-0 px-0">
+                                        <span class="icon">
+                                            <i class="fa-solid fa-wallet"></i>
+                                        </span>
+                                        <small class="d-block w-100">
+                                            Offers for every budget
+                                        </small>
+                                    </li>
+                                    <li class="text-black-50 border-0 px-0">
+                                        <span class="icon">
+                                            <i class="fa-solid fa-tag"></i>
+                                        </span>
+                                        <small class="d-block w-100">
+                                            Best Price
+                                        </small>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="lists-box card card_box border-0 p-0 bg-transparent mb-3">
+                                <p class="text-black fw-medium">
+                                    You might be interested in
+                                </p>
+                                <ul class="card-list p-0 border-0 list-unstyled mt-3">
+                                    <li class="text-black-50 border-0 px-0">
+                                        <a href="http://" target="_blank" class="text-black-50">
+                                            <small class="d-block w-100">
+                                                Holidays in Europe
+                                            </small>
+                                        </a>
+                                    </li>
+                                    <li class="text-black-50 border-0 px-0">
+                                        <a href="http://" target="_blank" class="text-black-50">
+                                            <small class="d-block w-100">
+                                                Holidays in Italy
+                                            </small>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="news-letter mt-5">
+            <div class="container">
+                <div class="row gy-3">
+                    <div class="col-lg-6">
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="assets/media/svgs/new-letter.svg" alt="" class="img-fluid">
+                            <div>
+                                <h1 class="h2 fw-semibold">
+                                    Still searching for that perfect trip?
+                                </h1>
+                                <p class="fs-5 mt-2">
+                                    Get weekly inspiration delivered right to your inbox!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <form action="" method="">
+                            <div class="form-group news-letter-input m-0">
+                                <label for="email" class="form-label">Your email address</label>
+                                <div class="input-cover d-flex align-items-center gap-3">
+                                    <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                                    <button type="submit" class="btn_primary py-3">Subscribe</button>
+                                </div>
+                                <small class="text-black-50">
+                                    We respect your privacy. We will not publish or share your email address in any way.
+                                </small>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="pre-logo text-black-50 mb-2">
+                        Made with <i class="fa-solid fa-heart"></i> by
+                    </div>
+                    <div class="footer-logo d-flex justify-content-center w-50 mb-3">
+                        <img src="assets/media/svgs/logo.svg" alt="" class="img-fluid">
+                    </div>
+                    <div class="footer-about">
+                        <strong>Who are we?</strong>
+                        <p>We’re the world’s leading marketplace to explore and book unforgettable travel experiences.
+                            We offer any type of holiday you can imagine including mindful yoga retreats, adventurous
+                            safaris, epic surf camps, and more.</p>
+                        <strong>Why choose us?</strong>
+                        <p>We love to travel and we want to share our excitement with you. We’re passionate about
+                            connecting you with local organizers to enrich your life with unforgettable trips.</p>
+                        <strong>Connect with us</strong>
+
+                    </div>
+                    <p class="copyright">Copyright © 2023 Tripaneer.<br> All rights reserved.</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4>Tripaneer</h4>
+                    <ul class="link-list">
+                        <li><a href="/customer-service">Contact Us</a></li>
+                        <li><a href="/about">About us</a></li>
+                        <li><a href="/gift-cards">Gift cards</a></li>
+                        <li><a href="/partners?experience=4">Become a Partner</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href="/affiliates">Join the Affiliate
+                                Program</a></li>
+                        <li><a href="#subscribe_modal">Newsletter Sign Up</a></li>
+                        <li><a href="https://tripaneer.recruitee.com/">Careers</a></li>
+                        <li><a href="/customer-service">Customer Care</a></li>
+                        <li><a href="/terms-and-privacy">Terms and Privacy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4>Our websites</h4>
+                    <ul class="link-list">
+                        <li><a target="_blank" rel="noopener noreferrer" href="https://www.bookmartialarts.com">Book
+                                MartialArts</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer"
+                                href="https://www.bookculinaryvacations.com">Book Culinary Vacations</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href="https://www.bookyogaretreats.com">Book
+                                Yoga Retreats</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href="https://www.bookcyclingholidays.com">Book
+                                Cycling Holidays</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href="https://www.booksurfcamps.com">Book Surf
+                                Camps</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer"
+                                href="https://www.bookhorseridingholidays.com">Book Horse Riding Holidays</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer"
+                                href="https://www.bookyogateachertraining.com">Book Yoga Teacher Training</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href="https://www.bookdetoxretreats.com">Book
+                                Detox Retreats</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href="https://www.bookallsafaris.com">Book All
+                                Safaris</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href="https://www.bookmotorcycletours.com">Book
+                                Motorcycle Tours</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href="https://www.bookranchvacations.com">Book
+                                Ranch Vacations</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4>Recent Blog Articles</h4>
+                    <ul class="link-list">
+                        <li><a href="/news/top-culinary-destinations">Top Culinary Destinations</a></li>
+                        <li><a href="/news/kung-fu-china">Top Destinations for Kung Fu Training</a></li>
+                        <li><a href="/news/martial-arts-travel-guide">A Travel Guide For Martial Arts Lovers</a></li>
+                        <li><a href="/news/top-martial-arts-camps">Popular Martial Arts Camps</a></li>
+                        <li><a href="/news/spiritual-retreats">Why Go on a Spiritual Retreat?</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="currencyModal" tabindex="-1" aria-labelledby="currencyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5 text-capitalize" id="currencyModalLabel">Change currency</h1>
+                    <button type="button" class="btn-close border-0" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row gy-4">
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <button type="button" class="currency-option" data-currency-code="AUD">
+                                Australian Dollar <span>AUD</span>
+                            </button>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <button type="button" class="currency-option" data-currency-code="CAD">
+                                Canadian Dollar <span>CAD</span>
+                            </button>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <button type="button" class="currency-option" data-currency-code="CNY">
+                                Chinese Renminbi Yuan <span>CNY</span>
+                            </button>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <button type="button" class="currency-option" data-currency-code="CHF">
+                                Swiss Franc <span>CHF</span>
+                            </button>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <button type="button" class="currency-option" data-currency-code="BRL">
+                                Brazilian Real <span>BRL - R$</span>
+                            </button>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <button type="button" class="currency-option" data-currency-code="USD">
+                                United States Dollar <span>USD - US$</span>
+                            </button>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <button type="button" class="currency-option" data-currency-code="GBP">
+                                British Pound <span>GBP - £</span>
+                            </button>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <button type="button" class="currency-option" data-currency-code="EUR">
+                                Euro <span>EUR - €</span>
+                            </button>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <button type="button" class="currency-option" data-currency-code="DKK">
+                                Danish Krone <span>DKK</span>
+                            </button>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <button type="button" class="currency-option" data-currency-code="CZK">
+                                Czech Koruna <span>CZK</span>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="quick-btns d-flex gap-2 p-3 px-2 bg-white shadow-lg">
+        <span class="chevr-toggle d-flex align-items-center justify-content-center">
+            <i class="fa-solid fa-chevron-left"></i>
+        </span>
+        <div class="d-flex flex-column gap-2 w-100">
+            <a href="http://" class="btn_primary d-flex align-items-center justify-content-center text-truncate"
+                target="_blank">
+                Send Inquiry
+            </a>
+            <a href="http://" class="btn_primary d-flex align-items-center justify-content-center text-truncate"
+                target="_blank">
+                Request to book
+            </a>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="assets/jquery/jquery.js"></script>
+    <script src="assets/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="assets/slick/slick.js"></script>
+    <script src="assets/datepicker/dcalendar.js"></script>
+    <script src="assets/fontawesome/js/all.min.js"></script>
+    <script src="assets/custom-jquery/custom.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+            var alertTimeout;
+            var timerPaused = false;
+
+            // Add class to body when alert timer starts
+            function addBodyClass() {
+                $('.info-sec').addClass('alert-box-bg');
+                $('body').addClass('overflow-hidden');
+            }
+
+            // Remove class from body when alert timer ends
+            function removeBodyClass() {
+                $('.info-sec').removeClass('alert-box-bg');
+                $('body').removeClass('overflow-hidden');
+            }
+
+            // Start the timer
+            function startTimer() {
+                alertTimeout = setTimeout(function () {
+                    $('#welcomeAlert').alert('close');
+                    removeBodyClass();
+                }, 6000); // 1 minute (60,000 milliseconds)
+
+                addBodyClass();
+            }
+
+            // Pause or resume the timer on mouse hover
+            $('#welcomeAlert').hover(function () {
+                if (alertTimeout) {
+                    clearTimeout(alertTimeout);
+                    timerPaused = true;
+                }
+            }, function () {
+                if (timerPaused) {
+                    timerPaused = false;
+                    startTimer();
+                }
+            });
+
+            // Show the welcome alert and start the timer
+            $('#welcomeAlert').alert();
+            startTimer();
+
+            // Remove body class when alert is closed
+            $('#welcomeAlert').on('closed.bs.alert', function () {
+                removeBodyClass();
+            });
+        });
+
+    </script>
+
+
+</body>
+
+</html>

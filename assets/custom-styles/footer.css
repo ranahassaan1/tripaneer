@@ -1,0 +1,23 @@
+.link-list {
+    padding: 0;
+}
+
+.link-list li {
+    list-style: none;
+    padding: 5px 0;
+}
+
+.link-list li a,
+.footer-about p {
+    font-size: 14px;
+    text-transform: capitalize;
+    color: var(--color-light);
+}
+
+.link-list li a:hover{
+    color: var(--color-primary);
+}
+
+.footer h4{
+    font-weight: 600;
+}

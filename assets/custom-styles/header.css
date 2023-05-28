@@ -1,0 +1,108 @@
+.site-header {
+    background: var(--color-white);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease-in-out;
+    border-bottom: 2px solid transparent;
+}
+
+.site-header.scrolled {
+    border-bottom: 5px solid var(--color-primary);
+}
+
+.site-header.scrolled .navbar {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    transition: background-color 200ms linear;
+    transition: all 0.4s ease-in-out;
+}
+.site-header .navbar {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+.site-header.scrolled .navbar-brand {
+    height: 28px;
+    transition: 0.4s;
+}
+.navbar-brand {
+    height: 32px;
+    transition: 0.4s;
+}
+
+.site-header .navbar .nav-link {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--color-dark);
+    padding: 0 8px;
+    transition: 0.3s;
+    position: relative;
+    transition: 0.3s;
+}
+
+.site-header .navbar .nav-link:hover {
+    color: var(--color-primary);
+}
+
+.site-header .navbar .nav-link:hover::before {
+    position: absolute;
+    content: ". . .";
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--color-primary);
+    font-size: 20px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 0;
+    transition: all 0.3s linear;
+}
+
+.site-header .navbar .nav-link.active {
+    color: var(--color-primary);
+}
+
+.site-header .navbar .nav-link.active::before {
+    position: absolute;
+    content: ". . .";
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--color-primary);
+    font-size: 20px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 0;
+    transition: all 0.3s linear;
+}
+
+.nav-item-right {
+    gap: 20px;
+}
+
+.nav-item-right .btn_simple svg {
+    width: 24px;
+    height: 24px;
+}
+
+.navbar-toggler {
+    border: none;
+    box-shadow: none;
+    background: none;
+    color: var(--color-primary);
+    outline: none;
+    padding: 0;
+    font-size: 26px;
+}
+.navbar-toggler:focus {
+    border: none;
+    box-shadow: none;
+    background: none;
+    outline: none;
+}
+
+#navbarSupportedContent {
+    transition: all 0.4s linear;
+}
