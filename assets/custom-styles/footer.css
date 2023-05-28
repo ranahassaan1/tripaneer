@@ -14,10 +14,10 @@
     color: var(--color-light);
 }
 
-.link-list li a:hover{
+.link-list li a:hover {
     color: var(--color-primary);
 }
 
-.footer h4{
+.footer h4 {
     font-weight: 600;
 }

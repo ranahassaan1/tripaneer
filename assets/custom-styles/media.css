@@ -1,3 +1,10 @@
+@media (max-width: 1366px) {
+    .info-sec{
+        display: none !important;
+    }
+}
+
+
 @media (max-width: 991px) {
     .rating-flex {
         flex-direction: column;
@@ -11,7 +18,7 @@
     .rating-flex .rating {
         margin-left: auto;
     }
-   
+
     .hide_this {
         display: none !important;
     }
@@ -84,6 +91,9 @@
     .nav-item-right .btn_simple svg {
         width: 20px;
         height: 20px;
+    }
+    .heading-lg {
+        font-size: 22px;
     }
 }
 
