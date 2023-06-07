@@ -1,9 +1,3 @@
-@media (max-width: 1366px) {
-    .info-sec{
-        display: none !important;
-    }
-}
-
 
 @media (max-width: 991px) {
     .rating-flex {

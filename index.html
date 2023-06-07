@@ -24,45 +24,6 @@
 
 <body>
 
-    <section class="info-sec">
-        <div id="welcomeAlert" class="welcome-alert alert alert-info alert-dismissible fade show" role="alert">
-            <button type="button"
-                class="btn_close border-0 position-static mx-auto d-flex align-items-center justify-content-center fw-bold bg-danger text-white p-3 py-2 mb-3"
-                data-bs-dismiss="alert" aria-label="Close">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <p class="des text-black text-center">
-                <span class="bg-danger text-white rounded-2 shadow-sm py-2 px-2 mb-2 lh-lg">HERE:</span>
-
-                Due to short time and my busy schedule, I have made important parts of this project. Hope this
-                assignment will show you my work ability and i have made some changes in UI.
-
-            </p>
-            <div class="container my-3">
-                <div class="row">
-                    <div class="col-12 mt-2">
-                        You can check the given funcatonalities in these components ....
-                    </div>
-                    <div class="col-lg-4">
-                        <p>Currency Modal:</p>
-                        <img src="assets/media/imgs/currency-fn.png" class="img-fluid" alt="">
-                    </div>
-                    <div class="col-lg-4">
-                        <p>Add to favourite:</p>
-                        <img src="assets/media/imgs/fvrt-1-fn.png" class="img-fluid" alt="">
-                    </div>
-                    <div class="col-lg-4">
-                        <p>Rating Review:</p>
-                        <img src="assets/media/imgs/rating-fn.png" class="img-fluid" alt="">
-                    </div>
-                </div>
-            </div>
-            <p class="des text-black text-center">
-                <strong class="d-block text-center mt-3">THANK YOU ....</strong>
-            </p>
-        </div>
-    </section>
-
     <header class="site-header sticky-top top-0 w-100">
         <nav class="navbar navbar-expand-lg">
             <div class="container">
@@ -133,14 +94,13 @@
                 <div class="row gx-2">
                     <div class="col-lg-8 hide_this">
                         <div class="img-xl position-relative">
-                            <button type="button" class="add-fvrt position-absolute">
-                                <span class="fvrt-icon" data-target="unlike">
-                                    <i class="fa-regular fa-heart unlike-heart"></i>
-                                    <i class="fa-solid fa-heart liked-heart"></i>
+                            <button type="button" class="add-fvrt position-absolute" data-target="unlike">
+                                <span class="fvrt-icon">
+                                    <i class="fa-regular fa-heart unlike-heart d-block"></i>
+                                    <i class="fa-solid fa-heart liked-heart d-none"></i>
                                 </span>
                             </button>
-                            <img src="assets/media/imgs/s1.jpg"
-                                alt="img" class="img-fluid">
+                            <img src="assets/media/imgs/s1.jpg" alt="img" class="img-fluid">
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12">
@@ -152,42 +112,35 @@
                             </div>
                             <div class="slider-for">
                                 <div>
-                                    <a href="assets/media/imgs/s2.jpg"
-                                        class="img-lg">
-                                        <img src="assets/media/imgs/s2.jpg"
-                                            alt="img" class="img-fluid">
+                                    <a href="assets/media/imgs/s2.jpg" class="img-lg">
+                                        <img src="assets/media/imgs/s2.jpg" alt="img" class="img-fluid">
                                     </a>
                                 </div>
                                 <div>
                                     <a href="" class="img-lg">
-                                        <img src="assets/media/imgs/s3.jpg"
-                                            alt="img">
+                                        <img src="assets/media/imgs/s3.jpg" alt="img">
                                     </a>
                                 </div>
                                 <div>
                                     <a href="" class="img-lg">
-                                        <img src="assets/media/imgs/s2.jpg"
-                                            alt="img">
+                                        <img src="assets/media/imgs/s2.jpg" alt="img">
                                     </a>
                                 </div>
                             </div>
                             <div class="slider-nav">
                                 <div>
                                     <div class="img-md">
-                                        <img src="assets/media/imgs/s2.jpg"
-                                            alt="img">
+                                        <img src="assets/media/imgs/s2.jpg" alt="img">
                                     </div>
                                 </div>
                                 <div>
                                     <div class="img-md">
-                                        <img src="assets/media/imgs/s3.jpg"
-                                            alt="img">
+                                        <img src="assets/media/imgs/s3.jpg" alt="img">
                                     </div>
                                 </div>
                                 <div>
                                     <div class="img-md">
-                                        <img src="assets/media/imgs/s2.jpg"
-                                            alt="img">
+                                        <img src="assets/media/imgs/s2.jpg" alt="img">
                                     </div>
                                 </div>
                             </div>
@@ -1322,7 +1275,6 @@
             </div>
         </section>
     </main>
-
     <footer class="footer py-4">
         <div class="container">
             <div class="row gy-4">
@@ -1497,60 +1449,7 @@
     <script src="assets/datepicker/dcalendar.js"></script>
     <script src="assets/fontawesome/js/all.min.js"></script>
     <script src="assets/custom-jquery/custom.js"></script>
-    <script>
-        $(document).ready(function () {
-            $(window).on('load resize', function () {
-                if ($(window).width() > 1366) {
-                    var alertTimeout;
-                    var timerPaused = false;
 
-                    // Add class to body when alert timer starts
-                    function addBodyClass() {
-                        $('.info-sec').addClass('alert-box-bg');
-                        $('body').addClass('overflow-hidden');
-                    }
-
-                    // Remove class from body when alert timer ends
-                    function removeBodyClass() {
-                        $('.info-sec').removeClass('alert-box-bg');
-                        $('body').removeClass('overflow-hidden');
-                    }
-
-                    // Start the timer
-                    function startTimer() {
-                        alertTimeout = setTimeout(function () {
-                            $('#welcomeAlert').alert('close');
-                            removeBodyClass();
-                        }, 6000); // 1 minute (60,000 milliseconds)
-
-                        addBodyClass();
-                    }
-
-                    // Pause or resume the timer on mouse hover
-                    $('#welcomeAlert').hover(function () {
-                        if (alertTimeout) {
-                            clearTimeout(alertTimeout);
-                            timerPaused = true;
-                        }
-                    }, function () {
-                        if (timerPaused) {
-                            timerPaused = false;
-                            startTimer();
-                        }
-                    });
-
-                    // Show the welcome alert and start the timer
-                    $('#welcomeAlert').alert();
-                    startTimer();
-
-                    // Remove body class when alert is closed
-                    $('#welcomeAlert').on('closed.bs.alert', function () {
-                        removeBodyClass();
-                    });
-                }
-            });
-        });
-    </script>
 </body>
 
 </html>

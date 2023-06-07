@@ -123,9 +123,13 @@ $(document).ready(function () {
       var dataTarget = $(this).attr("data-target");
       if (dataTarget === "unlike") {
         $(this).attr("data-target", "liked");
-        $(this).find(".unlike-heart").toggleClass("d-none");
+        $(this).find(".unlike-heart").removeClass("d-block").addClass("d-none");
+        $(this).find(".liked-heart").removeClass("d-none").addClass("d-block");
+      } else {
+        $(this).attr("data-target", "unlike");
+        $(this).find(".unlike-heart").removeClass("d-none").addClass("d-block");
+        $(this).find(".liked-heart").removeClass("d-block").addClass("d-none");
       }
     });
   });
-
 });
